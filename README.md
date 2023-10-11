@@ -20,7 +20,7 @@ npm install panda-wallet-provider
 
 First, wrap your application with the PandaProvider.
 
-```typescript
+```tsx
 //... other imports
 import { PandaProvider } from "panda-wallet-provider";
 
@@ -38,7 +38,7 @@ root.render(
 
 You can now use the usePandaWallet hook to interact with the wallet.
 
-```typescript
+```tsx
 import { usePandaWallet } from 'panda-wallet-provider';
 
 function YourComponent() {
