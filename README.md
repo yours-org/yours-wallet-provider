@@ -21,10 +21,7 @@ npm install panda-wallet-provider
 First, wrap your application with the PandaProvider.
 
 ```typescript
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import { App } from "./App";
+//... other imports
 import { PandaProvider } from "panda-wallet-provider";
 
 const root = ReactDOM.createRoot(
@@ -35,8 +32,6 @@ root.render(
     <App />
   </PandaProvider>
 );
-
-reportWebVitals();
 ```
 
 ### Use the Wallet Hook
