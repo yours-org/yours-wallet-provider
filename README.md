@@ -4,7 +4,7 @@ A React provider to make interactions with Panda Wallet a breeze.
 
 ## Description
 
-Panda Wallet Provider simplifies the process of integrating Panda Wallet into your React application by providing a context and relevant hooks. This provider ensures that you can effortlessly interact with the Panda Wallet, facilitating seamless transactions and wallet management in your dApp.
+The Panda Wallet Provider simplifies the process of integrating Panda Wallet into your react application by creating a provider that wraps your application.
 
 ## Installation
 
