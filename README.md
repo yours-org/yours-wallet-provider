@@ -24,7 +24,6 @@ First, wrap your application with the PandaProvider.
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-// import { PandaProvider } from "./contexts/PandaWalletContext";
 import { App } from "./App";
 import { PandaProvider } from "panda-wallet-provider";
 
