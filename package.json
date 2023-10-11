@@ -3,17 +3,23 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
   },
   "devDependencies": {
     "typescript": "^4.5.0",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0"
   },
   "keywords": [
     "wallet",
@@ -22,7 +28,11 @@
     "bitcoin",
     "panda wallet"
   ],
-  "author": "Your Name",
+  "author": "Dan Wagner",
   "license": "MIT",
-  "description": "A provider that makes interacting with Panda Wallet a walk in the park."
+  "description": "A provider that makes interacting with Panda Wallet a walk in the park.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/panda-wallet-provider.git"
+  }
 }
