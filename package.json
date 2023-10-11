@@ -1,0 +1,21 @@
+{
+  "name": "panda-wallet-provider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "panda wallet"
+  ],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.28"
+  }
+}
