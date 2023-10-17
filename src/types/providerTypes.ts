@@ -70,17 +70,54 @@ export type SignMessage = {
 
 export type KeyTypes = "bsv" | "ord";
 
-export type SignTransaction = {
-  rawtx: string;
-  vin: number;
-  sigHashTypeNumber: number;
-  keyType: KeyTypes;
-  outputScript: string;
-  outputSats: number;
-};
-
 export type Broadcast = {
   rawtx: string;
+};
+
+/**
+ * `SignatureRequest` contains required informations for a signer to sign a certain input of a transaction.
+ */
+export type SignatureRequest = {
+  prevTxId: string;
+  outputIndex: number;
+  /** The index of input to sign. */
+  inputIndex: number;
+  /** The previous output satoshis value of the input to spend. */
+  satoshis: number;
+  /** The address(es) of corresponding private key(s) required to sign the input. */
+  address: string | string[];
+  /** The previous output script of input, default value is a P2PKH locking script for the `address` if omitted. */
+  scriptHex?: string;
+  /** The sighash type, default value is `SIGHASH_ALL | SIGHASH_FORKID` if omitted. */
+  sigHashType?: number;
+  /**
+   * Index of the OP_CODESEPARATOR to split the previous output script at during verification.
+   * If undefined, the whole script is used.
+   * */
+  csIdx?: number;
+  /** The extra information for signing. */
+  data?: unknown;
+};
+
+/**
+ * `SignatureResponse` contains the signing result corresponding to a `SignatureRequest`.
+ */
+export type SignatureResponse = {
+  /** The index of input. */
+  inputIndex: number;
+  /** The signature.*/
+  sig: string;
+  /** The public key bound with the `sig`. */
+  publicKey: string;
+  /** The sighash type, default value is `SIGHASH_ALL | SIGHASH_FORKID` if omitted. */
+  sigHashType: number;
+  /** The index of the OP_CODESEPARATOR to split the previous output script at.*/
+  csIdx?: number;
+};
+
+export type GetSignatures = {
+  txHex: string;
+  sigRequests: SignatureRequest[];
 };
 
 export type PandaProviderType = {
@@ -95,6 +132,8 @@ export type PandaProviderType = {
   sendBsv: (params: SendBsv) => Promise<string | undefined>;
   transferOrdinal: (params: TransferOrdinal) => Promise<string | undefined>;
   signMessage: (params: SignMessage) => Promise<SignedMessage | undefined>;
-  signTransaction: (params: SignTransaction) => Promise<string | undefined>;
+  getSignatures: (
+    params: GetSignatures
+  ) => Promise<SignatureResponse[] | undefined>;
   broadcast: (params: Broadcast) => Promise<string | undefined>;
 };
