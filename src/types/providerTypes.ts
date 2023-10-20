@@ -129,7 +129,7 @@ export type PandaProviderType = {
   getAddresses: () => Promise<Addresses | undefined>;
   getBalance: () => Promise<Balance | undefined>;
   getOrdinals: () => Promise<Ordinal[] | undefined>;
-  sendBsv: (params: SendBsv) => Promise<string | undefined>;
+  sendBsv: (params: SendBsv[]) => Promise<string | undefined>;
   transferOrdinal: (params: TransferOrdinal) => Promise<string | undefined>;
   signMessage: (params: SignMessage) => Promise<SignedMessage | undefined>;
   getSignatures: (
