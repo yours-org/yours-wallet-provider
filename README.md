@@ -54,3 +54,19 @@ function YourComponent() {
   );
 }
 ```
+
+### Use the Panda Icon
+
+You can also import the `PandaIcon` for use in your project.
+
+```tsx
+import { PandaIcon } from "panda-wallet-provider";
+
+function YourComponent() {
+  return (
+    <div>
+      <PandaIcon size="32px" />
+    </div>
+  );
+}
+```
