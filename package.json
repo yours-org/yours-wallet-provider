@@ -33,6 +33,6 @@
   "description": "A provider that makes interacting with Panda Wallet a walk in the park.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/panda-wallet-provider.git"
+    "url": "https://github.com/Panda-Wallet/panda-wallet-provider.git"
   }
 }
