@@ -14,6 +14,11 @@ export type Balance = {
   usdInCents: number;
 };
 
+export type SocialProfile = {
+  displayName: string;
+  avatar: string;
+};
+
 export type Ordinal = {
   id: number;
   num: number;
@@ -127,6 +132,7 @@ export type PandaProviderType = {
   isConnected: () => Promise<boolean>;
   getPubKeys: () => Promise<PubKeys | undefined>;
   getAddresses: () => Promise<Addresses | undefined>;
+  getSocialProfile: () => Promise<SocialProfile | undefined>;
   getBalance: () => Promise<Balance | undefined>;
   getOrdinals: () => Promise<Ordinal[] | undefined>;
   sendBsv: (params: SendBsv[]) => Promise<string | undefined>;
