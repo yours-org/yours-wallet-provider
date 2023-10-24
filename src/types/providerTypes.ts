@@ -21,7 +21,7 @@ export type SocialProfile = {
 
 export type OrdinalData = {
     types?: string[];
-    insc?: File;
+    insc?: Inscription;
     map?: {[key: string]:any};
     b?: File;
     sigma?: {
