@@ -20,28 +20,33 @@ export type SocialProfile = {
 };
 
 export type OrdinalData = {
-    types?: string[];
-    insc?: Inscription;
-    map?: {[key: string]:any};
-    b?: File;
-    sigma?: {
-      algorithm: string;
-      address: string;
-      signature: string;
-      vin: number;
-    }[];
-    list?: {
-        price: number;
-        payout: string;
-    };
-    bsv20?: {
-        id?:  string;
-        p: string;
-        op: string;
-        tick?: string;
-        amt: string;
-        status?: Bsv20Status 
-    };
+  types?: string[];
+  insc?: {
+    json?: any;
+    text?: string;
+    words?: string[];
+    file: File;
+  };
+  map?: { [key: string]: any };
+  b?: File;
+  sigma?: {
+    algorithm: string;
+    address: string;
+    signature: string;
+    vin: number;
+  }[];
+  list?: {
+    price: number;
+    payout: string;
+  };
+  bsv20?: {
+    id?: string;
+    p: string;
+    op: string;
+    tick?: string;
+    amt: string;
+    status?: Bsv20Status
+  };
 };
 
 export type Origin = {
@@ -60,13 +65,6 @@ export type File = {
   type: string;
   size: number;
   hash: string;
-};
-
-export type Inscription = {
-    json?: any;
-    text?: string;
-    words?: string[];
-    file: File;
 };
 
 export type Ordinal = {
