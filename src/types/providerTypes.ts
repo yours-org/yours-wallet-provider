@@ -19,36 +19,74 @@ export type SocialProfile = {
   avatar: string;
 };
 
+export type OrdinalData = {
+  types?: string[];
+  insc?: Inscription;
+  map?: { [key: string]: any };
+  b?: File;
+  sigma?: Sigma[];
+  list?: Listing;
+  bsv20?: Bsv20;
+};
+
+export type Sigma = {
+  algorithm: string;
+  address: string;
+  signature: string;
+  vin: number;
+};
+
+export type Listing = {
+  price: number;
+  payout: string;
+};
+
+export type Bsv20 = {
+  id?: string;
+  p: string;
+  op: string;
+  tick?: string;
+  amt: string;
+  status?: Bsv20Status
+};
+
+export type Origin = {
+  outpoint: string;
+  data?: OrdinalData;
+  num?: number;
+};
+
+export enum Bsv20Status {
+  Invalid = -1,
+  Pending = 0,
+  Valid = 1
+};
+
+export type File = {
+  type: string;
+  size: number;
+  hash: string;
+};
+
+export type Inscription = {
+  json?: any;
+  text?: string;
+  words?: string[];
+  file: File;
+};
+
 export type Ordinal = {
-  id: number;
-  num: number;
   txid: string;
   vout: number;
   outpoint: string;
-  file: {
-    hash: string;
-    size: number;
-    type: string;
-  };
-  origin: string;
+  satoshis: number;
+  owner: string;
+  script: string;
+  spend: string;
+  origin: Origin;
   height: number;
   idx: number;
-  lock: string;
-  spend: string;
-  MAP: {
-    [key: string]: string;
-  };
-  B: {
-    hash: string;
-    size: number;
-    type: string;
-  };
-  SIGMA: any[];
-  listing: boolean;
-  price: number;
-  payout: string;
-  script: string;
-  bsv20: boolean;
+  data: OrdinalData;
 };
 
 export type SignedMessage = {
