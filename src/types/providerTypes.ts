@@ -93,7 +93,7 @@ export type SignedMessage = {
   address: string;
   pubKeyHex: string;
   signatureHex: string;
-  signedMessage: string;
+  signedMessage: string | Uint8Array;
 };
 
 export type SendBsv = {
@@ -108,7 +108,7 @@ export type TransferOrdinal = {
 };
 
 export type SignMessage = {
-  message: string;
+  message: string | Uint8Array;
 };
 
 export type KeyTypes = "bsv" | "ord";
