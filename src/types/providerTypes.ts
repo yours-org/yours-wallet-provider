@@ -109,6 +109,7 @@ export type TransferOrdinal = {
 
 export type SignMessage = {
   message: string;
+  encoding?: "utf8" | "hex" | "base64" ;
 };
 
 export type KeyTypes = "bsv" | "ord";
