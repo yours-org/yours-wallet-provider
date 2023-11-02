@@ -47,7 +47,7 @@ export type Bsv20 = {
   op: string;
   tick?: string;
   amt: string;
-  status?: Bsv20Status
+  status?: Bsv20Status;
 };
 
 export type Origin = {
@@ -59,8 +59,8 @@ export type Origin = {
 export enum Bsv20Status {
   Invalid = -1,
   Pending = 0,
-  Valid = 1
-};
+  Valid = 1,
+}
 
 export type File = {
   type: string;
@@ -109,13 +109,26 @@ export type TransferOrdinal = {
 
 export type SignMessage = {
   message: string;
-  encoding?: "utf8" | "hex" | "base64" ;
+  encoding?: "utf8" | "hex" | "base64";
 };
 
 export type KeyTypes = "bsv" | "ord";
 
 export type Broadcast = {
   rawtx: string;
+};
+
+export type PurchaseOrdinal = {
+  outpoint: string;
+  marketplaceRate?: number;
+  marketplaceAddress?: string;
+};
+
+export type Utxos = {
+  satoshis: number;
+  script: string;
+  txid: string;
+  vout: number;
 };
 
 /**
@@ -176,9 +189,12 @@ export type PandaProviderType = {
   getOrdinals: () => Promise<Ordinal[] | undefined>;
   sendBsv: (params: SendBsv[]) => Promise<string | undefined>;
   transferOrdinal: (params: TransferOrdinal) => Promise<string | undefined>;
+  purchaseOrdinal: (params: PurchaseOrdinal) => Promise<string | undefined>;
   signMessage: (params: SignMessage) => Promise<SignedMessage | undefined>;
   getSignatures: (
     params: GetSignatures
   ) => Promise<SignatureResponse[] | undefined>;
   broadcast: (params: Broadcast) => Promise<string | undefined>;
+  getExchangeRate: () => Promise<number | undefined>;
+  getPaymentUtxos: () => Promise<Utxos[] | undefined>;
 };
