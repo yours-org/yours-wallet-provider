@@ -103,6 +103,7 @@ export type SendBsv = {
   satAmount: number;
   data?: ArrayBuffer[];
   script?: string;
+  broadcast?: boolean;
 };
 
 export type TransferOrdinal = {
@@ -191,7 +192,9 @@ export type PandaProviderType = {
   getSocialProfile: () => Promise<SocialProfile | undefined>;
   getBalance: () => Promise<Balance | undefined>;
   getOrdinals: () => Promise<Ordinal[] | undefined>;
-  sendBsv: (params: SendBsv[]) => Promise<string | undefined>;
+  sendBsv: (
+    params: SendBsv[]
+  ) => Promise<{ rawtx: string; txid: string } | undefined>;
   transferOrdinal: (params: TransferOrdinal) => Promise<string | undefined>;
   purchaseOrdinal: (params: PurchaseOrdinal) => Promise<string | undefined>;
   signMessage: (params: SignMessage) => Promise<SignedMessage | undefined>;
