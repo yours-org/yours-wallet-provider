@@ -103,7 +103,6 @@ export type SendBsv = {
   satAmount: number;
   data?: ArrayBuffer[];
   script?: string;
-  broadcast?: boolean;
 };
 
 export type TransferOrdinal = {
