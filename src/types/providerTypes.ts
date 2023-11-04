@@ -96,6 +96,7 @@ export type SignedMessage = {
   pubKeyHex: string;
   signatureHex: string;
   signedMessage: string;
+  keyType: DerivationTags;
 };
 
 export type SendBsv = {
@@ -111,9 +112,12 @@ export type TransferOrdinal = {
   outpoint: string;
 };
 
+export type DerivationTags = "wallet" | "ord" | "locking";
+
 export type SignMessage = {
   message: string;
   encoding?: "utf8" | "hex" | "base64";
+  keyType?: DerivationTags;
 };
 
 export type KeyTypes = "bsv" | "ord";
