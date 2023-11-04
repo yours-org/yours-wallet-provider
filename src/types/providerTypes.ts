@@ -176,6 +176,14 @@ export type SignatureResponse = {
   csIdx?: number;
 };
 
+/**
+ * `SendBsvResponse` contains the result of sendBsv.
+ */
+export type SendBsvResponse = {
+  txid: string;
+  rawtx: string;
+};
+
 export type GetSignatures = {
   txHex: string;
   sigRequests: SignatureRequest[];
@@ -191,9 +199,7 @@ export type PandaProviderType = {
   getSocialProfile: () => Promise<SocialProfile | undefined>;
   getBalance: () => Promise<Balance | undefined>;
   getOrdinals: () => Promise<Ordinal[] | undefined>;
-  sendBsv: (
-    params: SendBsv[]
-  ) => Promise<{ rawtx: string; txid: string } | undefined>;
+  sendBsv: (params: SendBsv[]) => Promise<SendBsvResponse | undefined>;
   transferOrdinal: (params: TransferOrdinal) => Promise<string | undefined>;
   purchaseOrdinal: (params: PurchaseOrdinal) => Promise<string | undefined>;
   signMessage: (params: SignMessage) => Promise<SignedMessage | undefined>;
