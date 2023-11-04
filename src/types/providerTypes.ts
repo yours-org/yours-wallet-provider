@@ -101,7 +101,7 @@ export type SignedMessage = {
 export type SendBsv = {
   address?: string;
   satAmount: number;
-  data?: ArrayBuffer[];
+  data?: string[]; // hex string array
   script?: string;
 };
 
