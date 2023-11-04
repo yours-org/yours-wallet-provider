@@ -99,8 +99,10 @@ export type SignedMessage = {
 };
 
 export type SendBsv = {
-  address: string;
+  address?: string;
   satAmount: number;
+  data?: ArrayBuffer[];
+  script?: string;
 };
 
 export type TransferOrdinal = {
