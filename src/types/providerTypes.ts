@@ -1,11 +1,13 @@
 export type PubKeys = {
   bsvPubKey: string;
   ordPubKey: string;
+  lockingPubKey: string;
 };
 
 export type Addresses = {
   bsvAddress: string;
   ordAddress: string;
+  lockingAddress: string;
 };
 
 export type Balance = {
