@@ -123,7 +123,6 @@ export type DerivationTags = "wallet" | "ord" | "locking";
 export type SignMessage = {
   message: string;
   encoding?: "utf8" | "hex" | "base64";
-  keyType?: DerivationTags;
 };
 
 export type KeyTypes = "bsv" | "ord";
