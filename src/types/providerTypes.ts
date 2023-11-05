@@ -29,6 +29,12 @@ export type OrdinalData = {
   sigma?: Sigma[];
   list?: Listing;
   bsv20?: Bsv20;
+  lock?: Lock;
+};
+
+export type Lock = {
+  address: string;
+  until: number;
 };
 
 export type Sigma = {
