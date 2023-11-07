@@ -1,13 +1,13 @@
 export type PubKeys = {
   bsvPubKey: string;
   ordPubKey: string;
-  lockingPubKey: string;
+  identityPubKey: string;
 };
 
 export type Addresses = {
   bsvAddress: string;
   ordAddress: string;
-  lockingAddress: string;
+  identityAddress: string;
 };
 
 export type Balance = {
@@ -118,7 +118,7 @@ export type TransferOrdinal = {
   outpoint: string;
 };
 
-export type DerivationTags = "wallet" | "ord" | "locking";
+export type DerivationTags = "wallet" | "ord" | "identity";
 
 export type SignMessage = {
   message: string;
