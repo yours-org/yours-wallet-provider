@@ -12,7 +12,7 @@ export type Addresses = {
 
 export type Balance = {
   bsv: number;
-  sat: number;
+  satoshis: number;
   usdInCents: number;
 };
 
@@ -99,17 +99,17 @@ export type Ordinal = {
 
 export type SignedMessage = {
   address: string;
-  pubKeyHex: string;
-  signatureHex: string;
-  signedMessage: string;
+  pubKey: string;
+  sig: string;
+  message: string;
   keyType: DerivationTags;
 };
 
 export type SendBsv = {
   address?: string;
-  satAmount: number;
+  satoshis: number;
   data?: string[]; // hex string array
-  script?: string;
+  script?: string; // hex string
 };
 
 export type TransferOrdinal = {
@@ -139,7 +139,7 @@ export type PurchaseOrdinal = {
 
 export type Utxos = {
   satoshis: number;
-  script: string;
+  script: string; // hex string
   txid: string;
   vout: number;
 };
@@ -148,7 +148,7 @@ export type Utxos = {
  * `SignatureRequest` contains required informations for a signer to sign a certain input of a transaction.
  */
 export type SignatureRequest = {
-  prevTxId: string;
+  prevTxid: string;
   outputIndex: number;
   /** The index of input to sign. */
   inputIndex: number;
@@ -157,7 +157,7 @@ export type SignatureRequest = {
   /** The address(es) of corresponding private key(s) required to sign the input. */
   address: string | string[];
   /** The previous output script of input, default value is a P2PKH locking script for the `address` if omitted. */
-  scriptHex?: string;
+  script?: string;
   /** The sighash type, default value is `SIGHASH_ALL | SIGHASH_FORKID` if omitted. */
   sigHashType?: number;
   /**
@@ -178,7 +178,7 @@ export type SignatureResponse = {
   /** The signature.*/
   sig: string;
   /** The public key bound with the `sig`. */
-  publicKey: string;
+  pubKey: string;
   /** The sighash type, default value is `SIGHASH_ALL | SIGHASH_FORKID` if omitted. */
   sigHashType: number;
   /** The index of the OP_CODESEPARATOR to split the previous output script at.*/
@@ -194,13 +194,13 @@ export type SendBsvResponse = {
 };
 
 export type GetSignatures = {
-  txHex: string;
+  rawtx: string;
   sigRequests: SignatureRequest[];
 };
 
 export type PandaProviderType = {
   isReady: boolean;
-  connect: () => Promise<PubKeys | undefined>;
+  connect: () => Promise<string | undefined>;
   disconnect: () => Promise<boolean>;
   isConnected: () => Promise<boolean>;
   getPubKeys: () => Promise<PubKeys | undefined>;
