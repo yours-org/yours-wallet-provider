@@ -211,6 +211,12 @@ export type GetSignatures = {
   sigRequests: SignatureRequest[];
 };
 
+export type TaggedDerivationRequest = {
+  label: string;
+  id: string;
+  meta?: Record<string, any>;
+};
+
 export type TaggedDerivationResponse = {
   address: string;
   pubKey: string;
@@ -284,7 +290,7 @@ export type PandaProviderType = {
   getExchangeRate: () => Promise<number | undefined>;
   getPaymentUtxos: () => Promise<Utxos[] | undefined>;
   generateTaggedKeys: (
-    params: DerivationTag
+    params: TaggedDerivationRequest
   ) => Promise<TaggedDerivationResponse>;
   getTaggedKeys: (
     params: GetTaggedKeysRequest
