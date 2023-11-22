@@ -102,7 +102,7 @@ export type SignedMessage = {
   pubKey: string;
   sig: string;
   message: string;
-  keyType: DerivationTags;
+  derivationTag: DerivationTag;
 };
 
 export type SendBsv = {
@@ -110,6 +110,7 @@ export type SendBsv = {
   satoshis: number;
   data?: string[]; // hex string array
   script?: string; // hex string
+  inscription?: RawInscription;
 };
 
 export type TransferOrdinal = {
@@ -118,7 +119,19 @@ export type TransferOrdinal = {
   outpoint: string;
 };
 
-export type DerivationTags = "wallet" | "ord" | "identity";
+export type InternalPandaTags =
+  | { label: "panda"; id: "bsv"; domain: ""; meta: {} }
+  | { label: "panda"; id: "ord"; domain: ""; meta: {} }
+  | { label: "panda"; id: "identity"; domain: ""; meta: {} };
+
+export type DerivationTag =
+  | InternalPandaTags
+  | {
+      label: string;
+      id: string;
+      domain: string;
+      meta?: Record<string, any>;
+    };
 
 export type SignMessage = {
   message: string;
@@ -198,6 +211,58 @@ export type GetSignatures = {
   sigRequests: SignatureRequest[];
 };
 
+export type TaggedDerivationResponse = {
+  address: string;
+  pubKey: string;
+  tag: DerivationTag;
+};
+
+export type MimeTypes =
+  | "text/plain"
+  | "text/html"
+  | "text/css"
+  | "application/javascript"
+  | "application/json"
+  | "application/xml"
+  | "image/jpeg"
+  | "image/png"
+  | "image/gif"
+  | "image/svg+xml"
+  | "audio/mpeg"
+  | "audio/wav"
+  | "audio/wave"
+  | "video/mp4"
+  | "application/pdf"
+  | "application/msword"
+  | "application/vnd.ms-excel"
+  | "application/vnd.ms-powerpoint"
+  | "application/zip"
+  | "application/x-7z-compressed"
+  | "application/x-gzip"
+  | "application/x-tar"
+  | "application/x-bzip2";
+
+export type MAP = { app: string; type: string; [prop: string]: string };
+
+export type RawInscription = {
+  base64Data: string;
+  mimeType: MimeTypes;
+  map?: MAP;
+};
+
+export type InscribeRequest = {
+  address: string;
+  base64Data: string;
+  mimeType: MimeTypes;
+  map?: MAP;
+  satoshis?: number; // defaults to 1
+};
+
+export type GetTaggedKeysRequest = {
+  label: string;
+  ids: string[];
+};
+
 export type PandaProviderType = {
   isReady: boolean;
   connect: () => Promise<string | undefined>;
@@ -218,4 +283,11 @@ export type PandaProviderType = {
   broadcast: (params: Broadcast) => Promise<string | undefined>;
   getExchangeRate: () => Promise<number | undefined>;
   getPaymentUtxos: () => Promise<Utxos[] | undefined>;
+  generateTaggedKeys: (
+    params: DerivationTag
+  ) => Promise<TaggedDerivationResponse>;
+  getTaggedKeys: (
+    params: GetTaggedKeysRequest
+  ) => Promise<TaggedDerivationResponse[] | undefined>;
+  inscribe: (params: InscribeRequest[]) => Promise<SendBsvResponse | undefined>;
 };
