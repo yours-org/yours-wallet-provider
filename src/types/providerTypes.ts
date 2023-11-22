@@ -260,7 +260,7 @@ export type InscribeRequest = {
 
 export type GetTaggedKeysRequest = {
   label: string;
-  ids: string[];
+  ids?: string[];
 };
 
 export type PandaProviderType = {
