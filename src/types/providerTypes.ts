@@ -142,6 +142,7 @@ export type KeyTypes = "bsv" | "ord";
 
 export type Broadcast = {
   rawtx: string;
+  fund?: boolean;
 };
 
 export type PurchaseOrdinal = {
