@@ -24,7 +24,7 @@ export type SocialProfile = {
 export type OrdinalData = {
   types?: string[];
   insc?: Inscription;
-  map?: { [key: string]: any };
+  map?: { [key: string]: string };
   b?: File;
   sigma?: Sigma[];
   list?: Listing;
@@ -215,7 +215,7 @@ export type GetSignatures = {
 export type TaggedDerivationRequest = {
   label: string;
   id: string;
-  meta?: Record<string, any>;
+  meta?: { [key: string]: any };
 };
 
 export type TaggedDerivationResponse = {
