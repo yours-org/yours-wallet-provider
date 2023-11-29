@@ -130,7 +130,7 @@ export type DerivationTag =
       label: string;
       id: string;
       domain: string;
-      meta?: Record<string, any>;
+      meta?: { [key: string]: any };
     };
 
 export type SignMessage = {
