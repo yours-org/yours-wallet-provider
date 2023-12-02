@@ -270,6 +270,18 @@ export type GetTaggedKeysRequest = {
   ids?: string[];
 };
 
+export type EncryptRequest = {
+  message: string;
+  pubKeys: string[];
+  encoding?: "utf8" | "hex" | "base64";
+  tag?: DerivationTag;
+};
+
+export type DecryptRequest = {
+  messages: string[];
+  tag?: DerivationTag;
+};
+
 export type PandaProviderType = {
   isReady: boolean;
   connect: () => Promise<string | undefined>;
@@ -297,4 +309,6 @@ export type PandaProviderType = {
     params: GetTaggedKeysRequest
   ) => Promise<TaggedDerivationResponse[] | undefined>;
   inscribe: (params: InscribeRequest[]) => Promise<SendBsvResponse | undefined>;
+  encrypt: (params: EncryptRequest) => Promise<string[] | undefined>;
+  decrypt: (params: DecryptRequest) => Promise<string[] | undefined>;
 };
