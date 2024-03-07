@@ -284,6 +284,14 @@ export type DecryptRequest = {
 
 export type PandaProviderType = {
   isReady: boolean;
+  on: (
+    event: "signedOut" | "networkChanged",
+    listener: (args?: { [key: string]: any }) => void
+  ) => void;
+  removeListener: (
+    event: "signedOut" | "networkChanged",
+    listener: (args?: { [key: string]: any }) => void
+  ) => void;
   connect: () => Promise<string | undefined>;
   disconnect: () => Promise<boolean>;
   isConnected: () => Promise<boolean>;
