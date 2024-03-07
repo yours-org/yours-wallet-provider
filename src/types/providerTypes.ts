@@ -57,6 +57,7 @@ export type Bsv20 = {
   sym?: string;
   amt: string;
   status?: Bsv20Status;
+  icon?: string;
 };
 
 export type Origin = {
@@ -283,16 +284,14 @@ export type DecryptRequest = {
   tag?: DerivationTag;
 };
 
+export type PandaEvents = "signedOut" | "networkChanged";
+
+export type PandaEventListeners = (args?: { [key: string]: any }) => void;
+
 export type PandaProviderType = {
   isReady: boolean;
-  on: (
-    event: "signedOut" | "networkChanged",
-    listener: (args?: { [key: string]: any }) => void
-  ) => void;
-  removeListener: (
-    event: "signedOut" | "networkChanged",
-    listener: (args?: { [key: string]: any }) => void
-  ) => void;
+  on: (event: PandaEvents, listener: PandaEventListeners) => void;
+  removeListener: (event: PandaEvents, listener: PandaEventListeners) => void;
   connect: () => Promise<string | undefined>;
   disconnect: () => Promise<boolean>;
   isConnected: () => Promise<boolean>;
