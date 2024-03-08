@@ -288,7 +288,7 @@ export type YoursEvents = "signedOut" | "networkChanged";
 
 export type YoursEventListeners = (args?: { [key: string]: any }) => void;
 
-export type PandaProviderType = {
+export type YoursProviderType = {
   isReady: boolean;
   on: (event: YoursEvents, listener: YoursEventListeners) => void;
   removeListener: (event: YoursEvents, listener: YoursEventListeners) => void;
