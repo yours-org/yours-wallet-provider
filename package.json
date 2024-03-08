@@ -1,5 +1,5 @@
 {
-  "name": "panda-wallet-provider",
+  "name": "yours-wallet-provider",
   "version": "2.3.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,16 +23,16 @@
   },
   "keywords": [
     "wallet",
-    "panda",
     "bsv",
     "bitcoin",
-    "panda wallet"
+    "yours.org",
+    "yours wallet"
   ],
   "author": "Dan Wagner",
   "license": "MIT",
-  "description": "A provider that makes interacting with Panda Wallet a walk in the park.",
+  "description": "A provider that makes interacting with Yours Wallet a walk in the park.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Panda-Wallet/panda-wallet-provider.git"
+    "url": "https://github.com/yours-org/yours-wallet-provider.git"
   }
 }

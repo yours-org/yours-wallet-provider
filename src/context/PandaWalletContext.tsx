@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { PandaProviderType } from "../types/providerTypes";
+import { YoursProviderType } from "../types/providerTypes";
 
-export const PandaContext = createContext<PandaProviderType | undefined>(
+export const YoursContext = createContext<YoursProviderType | undefined>(
   undefined
 );
 
@@ -16,21 +16,21 @@ export const PandaProvider = (props: PandaProviderProps) => {
   const [pandaWallet, setPandaWallet] = useState<any>({ isReady: false });
 
   useEffect(() => {
-    const checkPandaWallet = () => {
+    const checkYoursWallet = () => {
       if ("panda" in window && window.panda?.isReady) {
         setPandaWallet(window.panda);
       }
     };
 
-    checkPandaWallet();
+    checkYoursWallet();
 
-    const intervalId = setInterval(checkPandaWallet, 1000);
+    const intervalId = setInterval(checkYoursWallet, 1000);
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <PandaContext.Provider value={pandaWallet}>
+    <YoursContext.Provider value={pandaWallet}>
       {children}
-    </PandaContext.Provider>
+    </YoursContext.Provider>
   );
 };
