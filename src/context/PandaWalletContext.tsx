@@ -12,7 +12,7 @@ interface PandaProviderProps {
 export const PandaProvider = (props: PandaProviderProps) => {
   const { children } = props;
 
-  // It takes a moment for the panda wallet to get injected into the DOM. To use context we need an initial state;
+  // It takes a moment for the yours wallet to get injected into the DOM. To use context we need an initial state;
   const [pandaWallet, setPandaWallet] = useState<any>({ isReady: false });
 
   useEffect(() => {
