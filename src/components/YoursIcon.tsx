@@ -3,7 +3,7 @@ export type PandaIconProps = {
   size: string;
 };
 
-export const PandaIcon = (props: PandaIconProps) => {
+export const YoursIcon = (props: PandaIconProps) => {
   return (
     <svg
       width={props.size}
