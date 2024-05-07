@@ -1,10 +1,10 @@
-# Panda Wallet Provider 🐼💼
+# Yours Wallet Provider 🌱
 
-A React provider to make interactions with [Panda Wallet](https://github.com/Panda-Wallet/panda-wallet) a breeze.
+A React provider to make interactions with [Yours Wallet](https://github.com/yours-org/yours-wallet) a breeze.
 
 ## Description
 
-The Panda Wallet Provider simplifies the process of integrating Panda Wallet into your react application by creating a provider that wraps your application.
+The Yours Wallet Provider simplifies the process of integrating Yours Wallet into your react application by creating a provider that wraps your application.
 
 For detailed instructions on integration and all available methods, be sure to check out the [Provider API Docs](https://panda-wallet.gitbook.io/provider-api/intro/introduction).
 
@@ -13,38 +13,38 @@ For detailed instructions on integration and all available methods, be sure to c
 Install the package using npm:
 
 ```sh
-npm install panda-wallet-provider
+npm install yours-wallet-provider
 ```
 
 ## Usage
 
 ### Setup the Provider
 
-First, wrap your application with the PandaProvider.
+First, wrap your application with the YoursProvider.
 
 ```tsx
 //... other imports
-import { PandaProvider } from "panda-wallet-provider";
+import { YoursProvider } from "yours-wallet-provider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <PandaProvider>
+  <YoursProvider>
     <App />
-  </PandaProvider>
+  </YoursProvider>
 );
 ```
 
 ### Use the Wallet Hook
 
-You can now use the usePandaWallet hook to interact with the wallet.
+You can now use the useYoursWallet hook to interact with the wallet.
 
 ```tsx
-import { usePandaWallet } from 'panda-wallet-provider';
+import { useYoursWallet } from 'yours-wallet-provider';
 
 function YourComponent() {
-  const wallet = usePandaWallet();
+  const wallet = useYoursWallet();
   const isReady = wallet.isReady;
   console.log(isReady);
   // true
@@ -55,17 +55,17 @@ function YourComponent() {
 }
 ```
 
-### Use the Panda Icon
+### Use the Yours.org Icon
 
-You can also import the `PandaIcon` for use in your project.
+You can also import the `YoursIcon` for use in your project.
 
 ```tsx
-import { PandaIcon } from "panda-wallet-provider";
+import { YoursIcon } from "yours-wallet-provider";
 
 function YourComponent() {
   return (
     <div>
-      <PandaIcon size="32px" />
+      <YoursIcon size="32px" />
     </div>
   );
 }
