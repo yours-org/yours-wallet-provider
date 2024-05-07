@@ -1,7 +1,7 @@
-import { PandaProviderType } from "./types/providerTypes";
+import { YoursProviderType } from "./types/providerTypes";
 
 declare global {
   interface Window {
-    panda: PandaProviderType;
+    panda: YoursProviderType;
   }
 }

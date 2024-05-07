@@ -1,4 +1,4 @@
-export * from "./context/PandaWalletContext";
-export * from "./hook/usePandaWallet";
+export * from "./context/YoursWalletContext";
+export * from "./hook/useYoursWallet";
 export * from "./types/providerTypes";
-export * from "./components/PandaIcon";
+export * from "./components/YoursIcon";
