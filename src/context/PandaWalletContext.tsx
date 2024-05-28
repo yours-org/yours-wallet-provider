@@ -5,20 +5,20 @@ export const YoursContext = createContext<YoursProviderType | undefined>(
   undefined
 );
 
-interface PandaProviderProps {
+interface YoursProviderProps {
   children: ReactNode;
 }
 
-export const PandaProvider = (props: PandaProviderProps) => {
+export const YoursProvider = (props: YoursProviderProps) => {
   const { children } = props;
 
   // It takes a moment for the yours wallet to get injected into the DOM. To use context we need an initial state;
-  const [pandaWallet, setPandaWallet] = useState<any>({ isReady: false });
+  const [yoursWallet, setYoursWallet] = useState<any>({ isReady: false });
 
   useEffect(() => {
     const checkYoursWallet = () => {
-      if ("panda" in window && window.panda?.isReady) {
-        setPandaWallet(window.panda);
+      if ("yours" in window && window.yours?.isReady) {
+        setYoursWallet(window.yours);
       }
     };
 
@@ -29,7 +29,7 @@ export const PandaProvider = (props: PandaProviderProps) => {
   }, []);
 
   return (
-    <YoursContext.Provider value={pandaWallet}>
+    <YoursContext.Provider value={yoursWallet}>
       {children}
     </YoursContext.Provider>
   );

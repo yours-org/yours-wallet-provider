@@ -121,13 +121,16 @@ export type TransferOrdinal = {
   outpoint: string;
 };
 
-export type InternalPandaTags =
+export type InternalYoursTags =
   | { label: "panda"; id: "bsv"; domain: ""; meta: {} }
   | { label: "panda"; id: "ord"; domain: ""; meta: {} }
-  | { label: "panda"; id: "identity"; domain: ""; meta: {} };
+  | { label: "panda"; id: "identity"; domain: ""; meta: {} }
+  | { label: "yours"; id: "bsv"; domain: ""; meta: {} }
+  | { label: "yours"; id: "ord"; domain: ""; meta: {} }
+  | { label: "yours"; id: "identity"; domain: ""; meta: {} };
 
 export type DerivationTag =
-  | InternalPandaTags
+  | InternalYoursTags
   | {
       label: string;
       id: string;
