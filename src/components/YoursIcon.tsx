@@ -38,9 +38,9 @@ export const YoursIcon = (props: YoursIconProps) => {
           width="38"
           height="38"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -90,9 +90,9 @@ export const YoursIcon = (props: YoursIconProps) => {
           y2="35.1517"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#109464" />
-          <stop offset="0.509773" stop-color="#5FE493" />
-          <stop offset="1" stop-color="#A1FF8B" />
+          <stop stopColor="#109464" />
+          <stop offset="0.509773" stopColor="#5FE493" />
+          <stop offset="1" stopColor="#A1FF8B" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_503_133"
@@ -102,9 +102,9 @@ export const YoursIcon = (props: YoursIconProps) => {
           y2="23.8983"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#A1FF8B" />
-          <stop offset="0.509773" stop-color="#5FE493" />
-          <stop offset="1" stop-color="#109464" />
+          <stop stopColor="#A1FF8B" />
+          <stop offset="0.509773" stopColor="#5FE493" />
+          <stop offset="1" stopColor="#109464" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_503_133"
@@ -114,10 +114,10 @@ export const YoursIcon = (props: YoursIconProps) => {
           y2="15.9753"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#109464" />
-          <stop offset="0.328125" stop-color="#5FE493" />
-          <stop offset="0.604167" stop-color="#A1FF8B" />
-          <stop offset="1" stop-color="#1A9E6A" />
+          <stop stopColor="#109464" />
+          <stop offset="0.328125" stopColor="#5FE493" />
+          <stop offset="0.604167" stopColor="#A1FF8B" />
+          <stop offset="1" stopColor="#1A9E6A" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_503_133"
@@ -127,9 +127,9 @@ export const YoursIcon = (props: YoursIconProps) => {
           y2="4.7723"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#109464" />
-          <stop offset="0.509773" stop-color="#5FE493" />
-          <stop offset="1" stop-color="#A1FF8B" />
+          <stop stopColor="#109464" />
+          <stop offset="0.509773" stopColor="#5FE493" />
+          <stop offset="1" stopColor="#A1FF8B" />
         </linearGradient>
       </defs>
     </svg>
