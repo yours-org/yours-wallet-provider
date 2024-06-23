@@ -121,6 +121,11 @@ export type TransferOrdinal = {
   outpoint: string;
 };
 
+export const enum NetWork {
+  Mainnet = "mainnet",
+  Testnet = "testnet",
+}
+
 export type InternalYoursTags =
   | { label: "panda"; id: "bsv"; domain: ""; meta: {} }
   | { label: "panda"; id: "ord"; domain: ""; meta: {} }
@@ -300,6 +305,7 @@ export type YoursProviderType = {
   isConnected: () => Promise<boolean>;
   getPubKeys: () => Promise<PubKeys | undefined>;
   getAddresses: () => Promise<Addresses | undefined>;
+  getNetwork: () => Promise<NetWork | undefined>;
   getSocialProfile: () => Promise<SocialProfile | undefined>;
   getBalance: () => Promise<Balance | undefined>;
   getOrdinals: () => Promise<Ordinal[] | undefined>;
