@@ -146,6 +146,7 @@ export type DerivationTag =
 export type SignMessage = {
   message: string;
   encoding?: "utf8" | "hex" | "base64";
+  tag?: DerivationTag;
 };
 
 export type KeyTypes = "bsv" | "ord";
