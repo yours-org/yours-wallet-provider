@@ -162,7 +162,7 @@ export type PurchaseOrdinal = {
   marketplaceAddress?: string;
 };
 
-export type Utxos = {
+export type Utxo = {
   satoshis: number;
   script: string; // hex string
   txid: string;
@@ -319,7 +319,7 @@ export type YoursProviderType = {
   ) => Promise<SignatureResponse[] | undefined>;
   broadcast: (params: Broadcast) => Promise<string | undefined>;
   getExchangeRate: () => Promise<number | undefined>;
-  getPaymentUtxos: () => Promise<Utxos[] | undefined>;
+  getPaymentUtxos: () => Promise<Utxo[] | undefined>;
   generateTaggedKeys: (
     params: TaggedDerivationRequest
   ) => Promise<TaggedDerivationResponse>;
