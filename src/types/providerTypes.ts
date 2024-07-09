@@ -49,21 +49,71 @@ export type Listing = {
   payout: string;
 };
 
+export interface Bsv20Balance {
+  confirmed: bigint;
+  pending: bigint;
+}
+
 export type Bsv20 = {
   id?: string;
   p: string;
   op: string;
   tick?: string;
   sym?: string;
+  dec: number;
   amt: string;
+  all: Bsv20Balance;
+  listed: Bsv20Balance;
   status?: Bsv20Status;
   icon?: string;
 };
+
+export type Claim = {
+  sub: string;
+  type: string;
+  value: string;
+};
+
+export type BSV20Txo = {
+  txid: string;
+  vout: number;
+  outpoint: string;
+  owner?: string;
+  script?: string;
+  spend?: string;
+  height: number;
+  idx: number;
+  op?: string;
+  tick?: string;
+  id?: string;
+  amt: string;
+  status: number;
+  reason?: string;
+  listing: boolean;
+  price?: number;
+  pricePer?: number;
+  payout?: string;
+  pricePerUnit?: number;
+};
+
+export type MapSubType = "collection" | "collectionItem";
+
+export interface OrdSchema {
+  app: string;
+  type: string;
+  name: string;
+  subType?: MapSubType;
+  subTypeData?: any;
+  royalties?: string;
+  previewUrl?: string;
+}
 
 export type Origin = {
   outpoint: string;
   data?: OrdinalData;
   num?: number;
+  map?: { [key: string]: any };
+  claims?: Claim[];
 };
 
 export enum Bsv20Status {
@@ -83,6 +133,11 @@ export type Inscription = {
   text?: string;
   words?: string[];
   file: File;
+};
+
+export type InscriptionData = {
+  type?: string;
+  data?: Buffer;
 };
 
 export type Ordinal = {
