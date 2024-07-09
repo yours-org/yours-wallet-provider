@@ -145,10 +145,11 @@ export type Ordinal = {
   vout: number;
   outpoint: string;
   satoshis: number;
-  owner: string;
-  script: string;
-  spend: string;
-  origin: Origin;
+  accSats: number;
+  owner?: string;
+  script?: string;
+  spend?: string;
+  origin?: Origin;
   height: number;
   idx: number;
   data: OrdinalData;
