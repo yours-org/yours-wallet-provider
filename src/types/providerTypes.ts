@@ -177,7 +177,7 @@ export type TransferOrdinal = {
   outpoint: string;
 };
 
-export const enum NetWork {
+export enum NetWork {
   Mainnet = "mainnet",
   Testnet = "testnet",
 }
