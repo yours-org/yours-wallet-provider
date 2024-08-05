@@ -150,7 +150,6 @@ export type Ordinal = {
   vout: number;
   outpoint: string;
   satoshis: number;
-  accSats: number;
   owner?: string;
   script?: string;
   spend?: string;
