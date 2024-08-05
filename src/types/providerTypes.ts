@@ -53,7 +53,7 @@ export interface Bsv20Balance {
   pending: bigint;
 }
 
-export interface BSV21 extends Bsv20 {
+export interface Bsv21 extends Bsv20 {
   id: string;
   sym: string;
 }
