@@ -128,6 +128,7 @@ export type File = {
   size: number;
   hash: string;
   text?: string;
+  json?: { [key: string]: any };
 };
 
 export type Inscription = {
