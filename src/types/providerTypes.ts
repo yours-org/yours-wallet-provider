@@ -33,7 +33,6 @@ export type OrdinalData = {
 };
 
 export type Lock = {
-  address: string;
   until: number;
 };
 
@@ -66,12 +65,6 @@ export type Bsv20 = {
   listed: Bsv20Balance;
   status?: Bsv20Status;
   icon?: string;
-};
-
-export type Claim = {
-  sub: string;
-  type: string;
-  value: string;
 };
 
 export type BSV20Txo = {
@@ -108,12 +101,20 @@ export interface OrdSchema {
   previewUrl?: string;
 }
 
+// export class Origin {
+//   constructor(
+//     public outpoint: string,
+//     public nonce: number,
+//     public data: { [key: string]: any } = {},
+//   ) {}
+// }
+
 export type Origin = {
   outpoint: string;
+  nonce?: number;
   data?: OrdinalData;
   num?: number;
   map?: { [key: string]: any };
-  claims?: Claim[];
 };
 
 export enum Bsv20Status {
@@ -129,10 +130,9 @@ export type File = {
 };
 
 export type Inscription = {
-  json?: any;
-  text?: string;
-  words?: string[];
   file: File;
+  fields?: { [key: string]: any };
+  parent?: string;
 };
 
 export type InscriptionData = {
