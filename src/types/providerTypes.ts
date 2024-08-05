@@ -105,7 +105,7 @@ export interface OrdSchema {
 //   constructor(
 //     public outpoint: string,
 //     public nonce: number,
-//     public data: { [key: string]: any } = {},
+//     public data: { [key: string]: any } = {}
 //   ) {}
 // }
 
@@ -127,6 +127,7 @@ export type File = {
   type: string;
   size: number;
   hash: string;
+  text?: string;
 };
 
 export type Inscription = {
