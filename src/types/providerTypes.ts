@@ -113,7 +113,7 @@ export type Origin = {
   outpoint: string;
   nonce?: number;
   data?: OrdinalData;
-  num?: number;
+  num?: string;
   map?: { [key: string]: any };
 };
 
