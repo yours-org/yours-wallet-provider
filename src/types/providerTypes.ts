@@ -169,6 +169,7 @@ export type SignedMessage = {
 
 export type SendBsv = {
   address?: string;
+  paymail?: string;
   satoshis: number;
   data?: string[]; // hex string array
   script?: string; // hex string
