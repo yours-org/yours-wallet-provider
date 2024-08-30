@@ -212,10 +212,10 @@ export type SignMessage = {
 
 export type KeyTypes = "bsv" | "ord";
 
-export type BroadcastFormat = "tx" | "beef" | "ef";
+export type TransactionFormat = "tx" | "beef" | "ef";
 export type Broadcast = {
   rawtx: string;
-  format?: BroadcastFormat;
+  format?: TransactionFormat;
   fund?: boolean;
 };
 
@@ -284,6 +284,7 @@ export type SendBsvResponse = {
 export type GetSignatures = {
   rawtx: string;
   sigRequests: SignatureRequest[];
+  format?: TransactionFormat;
 };
 
 export type TaggedDerivationRequest = {
