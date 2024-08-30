@@ -212,8 +212,10 @@ export type SignMessage = {
 
 export type KeyTypes = "bsv" | "ord";
 
+export type BroadcastFormat = "tx" | "beef" | "ef";
 export type Broadcast = {
   rawtx: string;
+  format?: BroadcastFormat;
   fund?: boolean;
 };
 
