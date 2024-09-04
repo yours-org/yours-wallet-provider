@@ -357,7 +357,7 @@ export type DecryptRequest = {
   tag?: DerivationTag;
 };
 
-export type YoursEvents = "signedOut" | "networkChanged";
+export type YoursEvents = "signedOut" | "switchAccount";
 
 export type YoursEventListeners = (args?: { [key: string]: any }) => void;
 
