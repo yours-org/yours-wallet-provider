@@ -28,7 +28,7 @@ export type OrdinalData = {
   b?: File;
   sigma?: Sigma[];
   list?: Listing;
-  bsv20?: Bsv20;
+  bsv20?: Bsv20 | Bsv21;
   lock?: Lock;
 };
 
