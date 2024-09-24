@@ -28,7 +28,7 @@ export type OrdinalData = {
   b?: File;
   sigma?: Sigma[];
   list?: Listing;
-  bsv20?: Bsv20 | Bsv21;
+  bsv20?: Bsv20;
   lock?: Lock;
 };
 
@@ -53,21 +53,18 @@ export interface Bsv20Balance {
   pending: bigint;
 }
 
-export interface Bsv21 extends Bsv20 {
-  id: string;
-  sym: string;
-}
-
 export interface Bsv20 {
   p: string;
   op: string;
-  tick?: string;
   dec: number;
   amt: string;
   all: Bsv20Balance;
   listed: Bsv20Balance;
   status?: Bsv20Status;
+  tick?: string;
   icon?: string;
+  id?: string;
+  sym?: string;
 }
 
 export type BSV20Txo = {
