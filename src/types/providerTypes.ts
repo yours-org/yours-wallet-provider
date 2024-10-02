@@ -164,6 +164,12 @@ export type SignedMessage = {
   derivationTag: DerivationTag;
 };
 
+export type SendBsv20 = {
+  idOrTick: string;
+  destinationAddress: string;
+  amount: number;
+};
+
 export type SendBsv = {
   address?: string;
   paymail?: string;
@@ -278,6 +284,11 @@ export type SendBsvResponse = {
   rawtx: string;
 };
 
+export type SendBsv20Response = {
+  txid: string;
+  rawtx: string;
+};
+
 export type GetSignatures = {
   rawtx: string;
   sigRequests: SignatureRequest[];
@@ -371,7 +382,9 @@ export type YoursProviderType = {
   getSocialProfile: () => Promise<SocialProfile | undefined>;
   getBalance: () => Promise<Balance | undefined>;
   getOrdinals: () => Promise<Ordinal[] | undefined>;
+  getBsv20s: () => Promise<Bsv20[] | undefined>;
   sendBsv: (params: SendBsv[]) => Promise<SendBsvResponse | undefined>;
+  sendBsv20: (params: SendBsv20) => Promise<SendBsv20Response | undefined>;
   transferOrdinal: (params: TransferOrdinal) => Promise<string | undefined>;
   purchaseOrdinal: (params: PurchaseOrdinal) => Promise<string | undefined>;
   signMessage: (params: SignMessage) => Promise<SignedMessage | undefined>;
