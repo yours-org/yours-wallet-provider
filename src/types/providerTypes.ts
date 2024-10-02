@@ -166,7 +166,7 @@ export type SignedMessage = {
 
 export type SendBsv20 = {
   idOrTick: string;
-  destinationAddress: string;
+  address: string;
   amount: number;
 };
 
