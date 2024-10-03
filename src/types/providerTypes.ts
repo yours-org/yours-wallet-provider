@@ -387,6 +387,7 @@ export type YoursProviderType = {
   sendBsv20: (params: SendBsv20) => Promise<SendBsv20Response | undefined>;
   transferOrdinal: (params: TransferOrdinal) => Promise<string | undefined>;
   purchaseOrdinal: (params: PurchaseOrdinal) => Promise<string | undefined>;
+  purchaseBsv20: (params: PurchaseOrdinal) => Promise<string | undefined>;
   signMessage: (params: SignMessage) => Promise<SignedMessage | undefined>;
   getSignatures: (
     params: GetSignatures
