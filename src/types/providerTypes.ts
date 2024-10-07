@@ -156,6 +156,11 @@ export type Ordinal = {
   data: OrdinalData;
 };
 
+export type GetPaginatedOrdinals = {
+  from?: string;
+  limit?: number;
+};
+
 export type PaginatedOrdinalsResponse = {
   ordinals: Ordinal[];
   from?: string;
@@ -387,7 +392,7 @@ export type YoursProviderType = {
   getSocialProfile: () => Promise<SocialProfile | undefined>;
   getBalance: () => Promise<Balance | undefined>;
   getOrdinals: (
-    from?: string
+    params?: GetPaginatedOrdinals
   ) => Promise<Ordinal[] | PaginatedOrdinalsResponse | undefined>;
   getBsv20s: () => Promise<Bsv20[] | undefined>;
   sendBsv: (params: SendBsv[]) => Promise<SendBsvResponse | undefined>;
