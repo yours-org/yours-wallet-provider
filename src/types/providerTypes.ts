@@ -386,7 +386,9 @@ export type YoursProviderType = {
   getNetwork: () => Promise<NetWork | undefined>;
   getSocialProfile: () => Promise<SocialProfile | undefined>;
   getBalance: () => Promise<Balance | undefined>;
-  getOrdinals: () => Promise<Ordinal[] | PaginatedOrdinalsResponse | undefined>;
+  getOrdinals: (
+    from?: string
+  ) => Promise<Ordinal[] | PaginatedOrdinalsResponse | undefined>;
   getBsv20s: () => Promise<Bsv20[] | undefined>;
   sendBsv: (params: SendBsv[]) => Promise<SendBsvResponse | undefined>;
   sendBsv20: (params: SendBsv20) => Promise<SendBsv20Response | undefined>;
