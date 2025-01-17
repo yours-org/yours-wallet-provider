@@ -375,6 +375,18 @@ export type DecryptRequest = {
   tag?: DerivationTag;
 };
 
+export type IngestTxsRequest = {
+  rawtxs: string[];
+  format?: TransactionFormat;
+}
+
+export type Ingest = {
+  txid: string;
+  height: number;
+  idx: number;
+  outputs?: number[];
+}
+
 export type YoursEvents = "signedOut" | "switchAccount";
 
 export type YoursEventListeners = (args?: { [key: string]: any }) => void;
