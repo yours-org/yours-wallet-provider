@@ -16,6 +16,11 @@ export type Balance = {
   usdInCents: number;
 };
 
+export type MNEEBalance = {
+  amount: number;
+  decimalAmount: number;
+};
+
 export type SocialProfile = {
   displayName: string;
   avatar: string;
@@ -180,6 +185,11 @@ export type SendBsv20 = {
   amount: number;
 };
 
+export type SendMNEE = {
+  address: string;
+  amount: number;
+};
+
 export type SendBsv = {
   address?: string;
   paymail?: string;
@@ -299,6 +309,11 @@ export type SendBsv20Response = {
   rawtx: string;
 };
 
+export type SendMNEEResponse = {
+  txid: string;
+  rawtx: string;
+};
+
 export type GetSignatures = {
   rawtx: string;
   sigRequests: SignatureRequest[];
@@ -391,12 +406,14 @@ export type YoursProviderType = {
   getNetwork: () => Promise<NetWork | undefined>;
   getSocialProfile: () => Promise<SocialProfile | undefined>;
   getBalance: () => Promise<Balance | undefined>;
+  getMNEEBalance: () => Promise<MNEEBalance | undefined>;
   getOrdinals: (
     params?: GetPaginatedOrdinals
   ) => Promise<Ordinal[] | PaginatedOrdinalsResponse | undefined>;
   getBsv20s: () => Promise<Bsv20[] | undefined>;
   sendBsv: (params: SendBsv[]) => Promise<SendBsvResponse | undefined>;
   sendBsv20: (params: SendBsv20) => Promise<SendBsv20Response | undefined>;
+  sendMNEE: (params: SendMNEE) => Promise<SendMNEEResponse | undefined>;
   transferOrdinal: (params: TransferOrdinal) => Promise<string | undefined>;
   purchaseOrdinal: (params: PurchaseOrdinal) => Promise<string | undefined>;
   purchaseBsv20: (params: PurchaseOrdinal) => Promise<string | undefined>;
