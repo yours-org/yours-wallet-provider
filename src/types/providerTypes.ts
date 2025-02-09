@@ -332,6 +332,12 @@ export type TaggedDerivationResponse = {
   tag: DerivationTag;
 };
 
+export type LockRequest = {
+  address: string;
+  blockHeight: number;
+  sats: number;
+};
+
 export type MimeTypes =
   | "text/plain"
   | "text/html"
@@ -431,6 +437,7 @@ export type YoursProviderType = {
     params: GetTaggedKeysRequest
   ) => Promise<TaggedDerivationResponse[] | undefined>;
   inscribe: (params: InscribeRequest[]) => Promise<SendBsvResponse | undefined>;
+  lockBsv: (params: LockRequest[]) => Promise<SendBsvResponse | undefined>;
   encrypt: (params: EncryptRequest) => Promise<string[] | undefined>;
   decrypt: (params: DecryptRequest) => Promise<string[] | undefined>;
 };
