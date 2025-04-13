@@ -164,6 +164,7 @@ export type Ordinal = {
 export type GetPaginatedOrdinals = {
   from?: string;
   limit?: number;
+  mimeType?: string;
 };
 
 export type PaginatedOrdinalsResponse = {
